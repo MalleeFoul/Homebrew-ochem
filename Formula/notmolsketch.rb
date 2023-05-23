@@ -9,8 +9,8 @@ class Notmolsketch < Formula
   head "https://github.com/hvennekate/Molsketch.git"
 
   depends_on "cmake" => :build
-  depends_on "open-babel"
-  depends_on "qt5"
+  depends_on "open-babel" 
+  depends_on "qt5" => :build
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
