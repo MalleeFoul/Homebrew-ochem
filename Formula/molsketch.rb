@@ -5,15 +5,16 @@ class Molsketch < Formula
   desc ""
   homepage "https://molsketch.sourceforge.io/"
   url "https://github.com/hvennekate/Molsketch/archive/refs/tags/Fluorine_0.8.0.tar.gz"
+  sha256 "37c960de78e061c202bc8b0e882510b409b154cdd06d457353898ccdb8445f86"
   license ""
-  head "https://github.com/hvennekate/Molsketch.git"
 
   depends_on "cmake" => :build
   depends_on "open-babel"
-  depends_on "qt5"
+  depends_on "qt5" => :build
 
   def install
     ENV[CMAKE_PREFIX_PATH] = "#{HOMEBREW_PREFIX}"
+    ENV[]
     args = ["-DMSK_PREFIX=#{prefix}"
     ]
     # ENV.deparallelize  # if your formula fails when building in parallel
