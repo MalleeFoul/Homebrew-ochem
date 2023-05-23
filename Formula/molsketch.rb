@@ -3,8 +3,8 @@
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Molsketch < Formula
   desc "Molsketch is a 2D molecular editing tool. Its goal is to help you draw molecules quick and easily."
-  homepage "https://sourceforge.net/projects/molsketch/files/Molsketch/Molsketch-0.8.0-src.tar.gz/"
-  url "https://sourceforge.net/projects/molsketch/files/latest/download"
+  homepage "https://molsketch.sourceforge.io/"
+  url "https://sourceforge.net/projects/molsketch/files/Molsketch/Molsketch-0.8.0-src.tar.gz/"
   version "0.8.0"
   sha256 "329c787c792dc6a040926770aa0da95ef120bef19440f6e0ab12b05ca8e126e4"
   license "GPLv2"
