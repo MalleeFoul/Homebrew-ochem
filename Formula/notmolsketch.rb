@@ -12,9 +12,13 @@ class Notmolsketch < Formula
   depends_on "open-babel" 
   depends_on "qt5" => :build
 
+
   def install
+    ENV[CMAKE_PREFIX_PATH] = "#{HOMEBREW_PREFIX}"
+    args = [
+
     # ENV.deparallelize  # if your formula fails when building in parallel
-    system "cmake", "-S", ".", "-B", "build", "-DMSK_PREFIX=#{prefix}" *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DMSK_PREFIX=#{prefix}","-D" *std_cmake_args
     system "cmake", "--build", "build"
     system "make", "install", "build"
   end
