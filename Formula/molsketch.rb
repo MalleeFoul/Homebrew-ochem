@@ -13,8 +13,11 @@ class Molsketch < Formula
   depends_on "qt5"
 
   def install
+    ENV[CMAKE_PREFIX_PATH] = "#{HOMEBREW_PREFIX}"
+    args = ["-DMSK_PREFIX=#{prefix}"
+    ]
     # ENV.deparallelize  # if your formula fails when building in parallel
-    system "cmake", "-S", ".", "-B", "build", "-DMSK_PREFIX=#{prefix}" *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "make", "install", "build"
   end
