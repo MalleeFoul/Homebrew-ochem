@@ -14,7 +14,6 @@ class Notmolsketch < Formula
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
-    system "echo", "#{qt5 Prefix}"
     system "cmake", "-S", ".", "-B", "build", "-DMSK_PREFIX=#{prefix}" *std_cmake_args
     system "cmake", "--build", "build"
     system "make", "install", "build"
