@@ -2,11 +2,12 @@
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Molsketch < Formula
-  desc ""
+  desc "Molsketch is a 2D molecular editing tool. Its goal is to help you draw molecules quick and easily."
   homepage "https://molsketch.sourceforge.io/"
   url "https://github.com/hvennekate/Molsketch/archive/refs/tags/Fluorine_0.8.0.tar.gz"
   sha256 "37c960de78e061c202bc8b0e882510b409b154cdd06d457353898ccdb8445f86"
-  license ""
+  head "https://github.com/hvennekate/Molsketch.git"
+  license "GPLv2"
 
   depends_on "cmake" => :build
   depends_on "open-babel"
