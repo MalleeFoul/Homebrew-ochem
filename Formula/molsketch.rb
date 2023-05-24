@@ -39,8 +39,8 @@ class Molsketch < Formula
       "-DQT_LinguistTools_DIR=#{Formula["qt@5"].lib}/cmake/Qt5LinguistTools}",
     ]
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-    system "cmake", "--build", "build"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "--build", "build", *args
     system "make", "install"
   end
 
