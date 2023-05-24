@@ -22,20 +22,21 @@ class Molsketch < Formula
 #    ENV['MSK_INSTALL_LIBS'] = "#{lib}"
 # I'm just gonna keep this here because I'm really sad that it was useless :(
 
-    ENV['QT_Core_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5Core}"
-    ENV['QT_Widgets_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5Widgets}"
-    ENV['QT_Gui_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5Gui}"
-    ENV['QT_PrintSupport_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5PrintSupport}"
-    ENV['QT_Svg_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5Svg}"
-    ENV['QT_Network_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5Network}"
-    ENV['QT_LinguistTools_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5LinguistTools}"
+    
     # ENV.deparallelize  # if your formula fails when building in parallel
     args = [
       "-DMSK_PREFIX=#{prefix}",
       "-DMSK_INSTALL_BINS=#{bin}",
       "-DMSK_INSTALL_INCLUDES=#{include}",
       "-DMSK_INSTALL_LIBS64=#{lib}",
-      "-DMSK_INSTALL_LIBS=#{lib}" 
+      "-DMSK_INSTALL_LIBS=#{lib}",
+      "-DQT_Core_DIR=#{Formula["qt@5"].lib}/cmake/Qt5Core}",
+      "-DQT_Widgets_DIR=#{Formula["qt@5"].lib}/cmake/Qt5Widgets}",
+      "-DQT_Gui_DIR=#{Formula["qt@5"].lib}/cmake/Qt5Gui}",
+      "-DQT_PrintSupport_DIR=#{Formula["qt@5"].lib}/cmake/Qt5PrintSupport}",
+      "-DQT_Svg_DIR=#{Formula["qt@5"].lib}/cmake/Qt5Svg}",
+      "-DQT_Network_DIR=#{Formula["qt@5"].lib}/cmake/Qt5Network}",
+      "-DQT_LinguistTools_DIR=#{Formula["qt@5"].lib}/cmake/Qt5LinguistTools}",
     ]
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
