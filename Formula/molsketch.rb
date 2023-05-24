@@ -40,7 +40,7 @@ class Molsketch < Formula
     ]
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
-    system "cmake", "--build", "build", *args
+    system "cmake", "--build", "build"
     system "make", "install"
   end
 
