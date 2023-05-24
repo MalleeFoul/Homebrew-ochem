@@ -22,7 +22,7 @@ class Molsketch < Formula
     args = ["-DMSK_PREFIX=#{prefix}"
     ]
     # ENV.deparallelize  # if your formula fails when building in parallel
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args *args
     system "cmake", "--build", "build"
     system "make", "install", "build"
   end
