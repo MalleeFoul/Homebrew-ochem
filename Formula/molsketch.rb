@@ -6,7 +6,6 @@ class Molsketch < Formula
   homepage "https://molsketch.sourceforge.io/"
   url "https://github.com/hvennekate/Molsketch/archive/refs/tags/Fluorine_0.8.0.tar.gz"
   sha256 "37c960de78e061c202bc8b0e882510b409b154cdd06d457353898ccdb8445f86"
-  head "https://github.com/hvennekate/Molsketch.git"
   license "GPL-2.0"
   depends_on "cmake" => :build
   depends_on "open-babel"
