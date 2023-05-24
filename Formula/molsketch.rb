@@ -11,6 +11,10 @@ class Molsketch < Formula
   depends_on "cmake" => :build
   depends_on "open-babel"
   depends_on "qt5" => :build
+  depends_on "Widgets" => :qt5
+  depends_on "Gui" => :qt5
+  depends_on "PrintSupport" => :qt5
+  depends_on "Svg" => :qt5
 
   def install
     ENV[CMAKE_PREFIX_PATH] = "#{HOMEBREW_PREFIX}"
