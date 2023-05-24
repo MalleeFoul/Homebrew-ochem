@@ -21,7 +21,13 @@ class Molsketch < Formula
     ENV['MSK_INSTALL_LIBS64'] = "#{lib}" # so, sorry about that, if you haven't noticed, my sanity is slowly degrading tbh.
     ENV['MSK_INSTALL_LIBS'] = "#{lib}"
 
-    ENV['QT_CORE'] = "#{Formula["qt@5"].lib}/cmake/Qt5Core}"
+    ENV['QT_Core_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5Core}"
+    ENV['QT_Widgets_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5Widgets}"
+    ENV['QT_Gui_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5Gui}"
+    ENV['QT_PrintSupport_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5PrintSupport}"
+    ENV['QT_Svg_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5Svg}"
+    ENV['QT_Network_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5Network}"
+    ENV['QT_LinguistTools_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5LinguistTools}"
     # ENV.deparallelize  # if your formula fails when building in parallel
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
