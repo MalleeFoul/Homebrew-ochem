@@ -11,6 +11,7 @@ class Molsketch < Formula
   depends_on "cmake" => :build
   depends_on "open-babel"
   depends_on "qt@5" => :build
+  depends_on "creduce" => :build
 
   def install
 
