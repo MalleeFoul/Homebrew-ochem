@@ -14,7 +14,12 @@ class Molsketch < Formula
 
   def install
 
-    ENV['MSK_PREFIX'] = "#{prefix}"
+    ENV['MSK_PREFIX'] = "#{prefix}" # God, this is a bit of a pain
+    ENV['MSK_INSTALL_BINS'] = "#{bin}" # Like why couldn't they have just had the variables relate to each other
+    ENV['MSK_INSTALL_INCLUDES'] = "#{include}" # I'm sure they're nice people and all, and I rlly shouldn't badmouth them
+    ENV['MSK_INSTALL_LIBS64'] = "#{lib}" # so, sorry about that, if you haven't noticed, my sanity is slowly degrading tbh.
+    ENV['MSK_INSTALL_LIBS'] = "#{lib}"
+
     ENV['QT_CORE'] = "#{Formula["qt@5"].lib}/cmake/Qt5Core}"
     # ENV.deparallelize  # if your formula fails when building in parallel
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
