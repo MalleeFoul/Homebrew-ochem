@@ -14,8 +14,8 @@ class Molsketch < Formula
 
   def install
 
-    ENV[MSK_PREFIX] = "#{prefix}"
-    ENV[QT_CORE] = "#{Formula["qt@5"].lib}/cmake/Qt5Core}"
+    ENV['MSK_PREFIX'] = "#{prefix}"
+    ENV['QT_CORE'] = "#{Formula["qt@5"].lib}/cmake/Qt5Core}"
     # ENV.deparallelize  # if your formula fails when building in parallel
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
