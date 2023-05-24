@@ -30,10 +30,11 @@ class Molsketch < Formula
     ENV['QT_Network_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5Network}"
     ENV['QT_LinguistTools_DIR'] = "#{Formula["qt@5"].lib}/cmake/Qt5LinguistTools}"
     # ENV.deparallelize  # if your formula fails when building in parallel
-    args = ["-DMSK_PREFIX=#{prefix}"
+    args = [
+      "-DMSK_PREFIX=#{prefix}"
       "-DMSK_INSTALL_BINS=#{bin}"
       "-DMSK_INSTALL_INCLUDES=#{include}"
-      "-DMSK_INSTALL_LIBS64=#{lib}"=
+      "-DMSK_INSTALL_LIBS64=#{lib}"
       "-DMSK_INSTALL_LIBS=#{lib}" 
     ]
 
