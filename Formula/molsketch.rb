@@ -11,10 +11,6 @@ class Molsketch < Formula
   depends_on "cmake" => :build
   depends_on "open-babel"
   depends_on "qt@5" => :build
-  depends_on "qtWidgets" => :qt5
-  depends_on "qtGui" => :qt5
-  depends_on "qtPrintSupport" => :qt5
-  depends_on "qtSvg" => :qt5
 
   def install
 
