@@ -26,10 +26,6 @@ class Molsketch < Formula
     # ENV.deparallelize  # if your formula fails when building in parallel
     args = [
       "-DMSK_PREFIX=#{prefix}",
-      "-DMSK_INSTALL_BINS=#{bin}",
-      "-DMSK_INSTALL_INCLUDES=#{include}",
-      "-DMSK_INSTALL_LIBS64=#{lib}",
-      "-DMSK_INSTALL_LIBS=#{lib}",
       "-DQT_Core_DIR=#{Formula["qt@5"].lib}/cmake/Qt5Core}",
       "-DQT_Widgets_DIR=#{Formula["qt@5"].lib}/cmake/Qt5Widgets}",
       "-DQT_Gui_DIR=#{Formula["qt@5"].lib}/cmake/Qt5Gui}",
