@@ -14,6 +14,8 @@ class Molsketch < Formula
   depends_on "abseil" => :build
   depends_on "extra-cmake-modules"
   depends_on "gcc"
+  depends_on "libxml++"
+  depends_on "libxml2"
 
   def install
 
