@@ -7,6 +7,9 @@ class Molsketch < Formula
   url "https://github.com/hvennekate/Molsketch/archive/refs/tags/Fluorine_0.8.0.tar.gz"
   sha256 "37c960de78e061c202bc8b0e882510b409b154cdd06d457353898ccdb8445f86"
   license "GPL-2.0"
+  
+  head do
+    url "https://github.com/hvennekate/Molsketch.git", branch: "main"
 
   depends_on "cmake" => :build
   depends_on "open-babel" => :build
@@ -16,6 +19,7 @@ class Molsketch < Formula
   depends_on "gcc"
   depends_on "libxml++"
   depends_on "libxml2"
+  depends_on "mingw-w64" => :build
 
   def install
 
