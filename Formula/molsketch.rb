@@ -9,7 +9,7 @@ class Molsketch < Formula
   license "GPL-2.0"
 
   depends_on "cmake" => :build
-  depends_on "open-babel"
+  depends_on "open-babel" => :build
   depends_on "qt@5" => :build
   depends_on "abseil" => :build
   depends_on "extra-cmake-modules"
