@@ -17,10 +17,14 @@ class Molsketch < Formula
   depends_on "qt@5" => :build
   depends_on "abseil" => :build
   depends_on "extra-cmake-modules"
-  depends_on "gcc@11"
+  depends_on "gcc@11" => :build
   depends_on "libxml++"
   depends_on "libxml2"
   depends_on "mingw-w64" => :build
+  depends_on "glm" => :build
+  depends_on "gsl" => :build
+
+  fails_with :clang
 
   def install
 
@@ -35,14 +39,7 @@ class Molsketch < Formula
     # ENV.deparallelize  # if your formula fails when building in parallel
     args = [
       "-DMSK_PREFIX=#{prefix}",
-      "-DCMAKE_PREFIX_PATH=#{Formula["qt@5"]}",
-      "-DQT_Core_DIR=#{Formula["qt@5"].lib}/cmake/Qt5Core}",
-      "-DQT_Widgets_DIR=#{Formula["qt@5"].lib}/cmake/Qt5Widgets}",
-      "-DQT_Gui_DIR=#{Formula["qt@5"].lib}/cmake/Qt5Gui}",
-      "-DQT_PrintSupport_DIR=#{Formula["qt@5"].lib}/cmake/Qt5PrintSupport}",
-      "-DQT_Svg_DIR=#{Formula["qt@5"].lib}/cmake/Qt5Svg}",
-      "-DQT_Network_DIR=#{Formula["qt@5"].lib}/cmake/Qt5Network}",
-      "-DQT_LinguistTools_DIR=#{Formula["qt@5"].lib}/cmake/Qt5LinguistTools}",
+      "-DCMAKE_PREFIX_PATH=#{Formula["qt@5"]}"
     ]
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
