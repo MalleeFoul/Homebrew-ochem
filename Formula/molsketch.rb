@@ -10,6 +10,7 @@ class Molsketch < Formula
   
   head do
     url "https://github.com/hvennekate/Molsketch.git", branch: "main"
+  end
 
   depends_on "cmake" => :build
   depends_on "open-babel" => :build
